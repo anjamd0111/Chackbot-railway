@@ -1,11 +1,12 @@
 FROM node:20-slim
 
-# Install system dependencies (ffmpeg for voice notes, python for gTTS)
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     python3 \
     python3-pip \
     chromium \
+    git \
     --no-install-recommends \
     && pip3 install gTTS --break-system-packages \
     && rm -rf /var/lib/apt/lists/*
@@ -30,4 +31,3 @@ EXPOSE 3000
 
 # Start the bot
 CMD ["node", "index.js"]
-
