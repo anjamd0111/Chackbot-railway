@@ -5,13 +5,13 @@
 
 module.exports = {
   // ── Owner Settings ──────────────────────────
-  OWNER_NUMBER: process.env.OWNER_NUMBER || "8801XXXXXXXXX",
+  OWNER_NUMBER: process.env.OWNER_NUMBER || "918927667032",
   OWNER_NAME: process.env.OWNER_NAME || "Boss",
 
   // ── Bot Identity ────────────────────────────
   BOT_NAME: process.env.BOT_NAME || "𝗔𝗜 𝗕𝗼𝘁",
   BOT_VERSION: "1.0.0",
-  PREFIX: process.env.PREFIX || "!",
+  PREFIX: process.env.PREFIX || ".",
 
   // ── AI API Settings ─────────────────────────
   OPENAI_API_KEY: process.env.OPENAI_API_KEY || "",
@@ -35,11 +35,11 @@ module.exports = {
   TEMP_DIR: "./temp",
 
   // ── Features Toggle ─────────────────────────
-  AUTO_VOICE_REPLY: process.env.AUTO_VOICE_REPLY !== "false",
+  AUTO_VOICE_REPLY: process.env.AUTO_VOICE_REPLY !== "true",
   AUTO_TYPING: true,
   AUTO_READ: true,
   GROUP_REPLY: process.env.GROUP_REPLY !== "false",
-  PRIVATE_REPLY: true,
+  PRIVATE_REPLY: false,
 
   // ── Anti-Crash ──────────────────────────────
   RECONNECT_DELAY: 3000,
