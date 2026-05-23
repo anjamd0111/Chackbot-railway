@@ -9,14 +9,14 @@ async function voiceCommand(sock, msg, text) {
   if (!text) {
     return sock.sendMessage(
       msg.key.remoteJid,
-      { text: "❌ টেক্সট দাও!\n\nExample: `!voice আমি ভালো আছি`" },
+      { text: "тЭМ ржЯрзЗржХрзНрж╕ржЯ ржжрж╛ржУ!\n\nExample: `!voice ржЖржорж┐ ржнрж╛рж▓рзЛ ржЖржЫрж┐`" },
       { quoted: msg }
     );
   }
 
   await sock.sendMessage(
     msg.key.remoteJid,
-    { text: "🎙️ Voice note তৈরি হচ্ছে..." },
+    { text: "ЁЯОЩя╕П Voice note рждрзИрж░рж┐ рж╣ржЪрзНржЫрзЗ..." },
     { quoted: msg }
   );
 
@@ -35,7 +35,7 @@ async function voiceCommand(sock, msg, text) {
     console.error("[Voice Command Error]", err.message);
     await sock.sendMessage(
       msg.key.remoteJid,
-      { text: `❌ Voice note তৈরি করতে সমস্যা হয়েছে!\n\n${err.message}` },
+      { text: `тЭМ Voice note рждрзИрж░рж┐ ржХрж░рждрзЗ рж╕ржорж╕рзНржпрж╛ рж╣ржпрж╝рзЗржЫрзЗ!\n\n${err.message}` },
       { quoted: msg }
     );
   } finally {
