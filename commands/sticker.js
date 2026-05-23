@@ -16,7 +16,7 @@ async function stickerCommand(sock, msg) {
     return sock.sendMessage(
       msg.key.remoteJid,
       {
-        text: "❌ একটি ছবিতে reply করে `!sticker` লিখো!\n\nঅথবা ছবির সাথে caption এ `!sticker` লিখো।",
+        text: "тЭМ ржПржХржЯрж┐ ржЫржмрж┐рждрзЗ reply ржХрж░рзЗ `!sticker` рж▓рж┐ржЦрзЛ!\n\nржЕржержмрж╛ ржЫржмрж┐рж░ рж╕рж╛ржерзЗ caption ржП `!sticker` рж▓рж┐ржЦрзЛред",
       },
       { quoted: msg }
     );
@@ -24,7 +24,7 @@ async function stickerCommand(sock, msg) {
 
   await sock.sendMessage(
     msg.key.remoteJid,
-    { text: "🎨 Sticker তৈরি হচ্ছে..." },
+    { text: "ЁЯОи Sticker рждрзИрж░рж┐ рж╣ржЪрзНржЫрзЗ..." },
     { quoted: msg }
   );
 
@@ -67,7 +67,7 @@ async function stickerCommand(sock, msg) {
     await sock.sendMessage(
       msg.key.remoteJid,
       {
-        text: `❌ Sticker তৈরি করতে সমস্যা হয়েছে!\n\nffmpeg ইনস্টল আছে কি? Error: ${err.message.slice(0, 100)}`,
+        text: `тЭМ Sticker рждрзИрж░рж┐ ржХрж░рждрзЗ рж╕ржорж╕рзНржпрж╛ рж╣ржпрж╝рзЗржЫрзЗ!\n\nffmpeg ржЗржирж╕рзНржЯрж▓ ржЖржЫрзЗ ржХрж┐? Error: ${err.message.slice(0, 100)}`,
       },
       { quoted: msg }
     );
