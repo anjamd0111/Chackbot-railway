@@ -7,12 +7,12 @@ const { cleanupFile } = require("../lib/tts");
 const { formatNumber } = require("../lib/utils");
 const fs = require("fs-extra");
 
-// ── !play or !song command ───────────────────
+// тФАтФА !play or !song command тФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФА
 async function playCommand(sock, msg, query) {
   if (!query) {
     return sock.sendMessage(
       msg.key.remoteJid,
-      { text: "❌ গানের নাম দাও!\n\nExample: `!play Tumi Amar Mon`" },
+      { text: "тЭМ ржЧрж╛ржирзЗрж░ ржирж╛ржо ржжрж╛ржУ!\n\nExample: `!play Tumi Amar Mon`" },
       { quoted: msg }
     );
   }
@@ -20,7 +20,7 @@ async function playCommand(sock, msg, query) {
   // Send searching message
   await sock.sendMessage(
     msg.key.remoteJid,
-    { text: `🔍 *"${query}"* খুঁজছি...\n\nএকটু অপেক্ষা করো ⏳` },
+    { text: `ЁЯФН *"${query}"* ржЦрзБржБржЬржЫрж┐...\n\nржПржХржЯрзБ ржЕржкрзЗржХрзНрж╖рж╛ ржХрж░рзЛ тП│` },
     { quoted: msg }
   );
 
@@ -37,7 +37,7 @@ async function playCommand(sock, msg, query) {
 
   try {
     // Send info message first
-    const infoText = `🎵 *${result.title}*\n\n👤 Artist: ${result.author}\n⏱️ Duration: ${result.duration}\n📦 Size: ${result.size}\n\n⬇️ পাঠাচ্ছি...`;
+    const infoText = `ЁЯО╡ *${result.title}*\n\nЁЯСд Artist: ${result.author}\nтП▒я╕П Duration: ${result.duration}\nЁЯУж Size: ${result.size}\n\nтмЗя╕П ржкрж╛ржарж╛ржЪрзНржЫрж┐...`;
 
     await sock.sendMessage(msg.key.remoteJid, { text: infoText }, { quoted: msg });
 
@@ -57,7 +57,7 @@ async function playCommand(sock, msg, query) {
     console.error("[Music Send Error]", err.message);
     await sock.sendMessage(
       msg.key.remoteJid,
-      { text: `❌ গান পাঠাতে সমস্যা হয়েছে!\n\nError: ${err.message}` },
+      { text: `тЭМ ржЧрж╛ржи ржкрж╛ржарж╛рждрзЗ рж╕ржорж╕рзНржпрж╛ рж╣ржпрж╝рзЗржЫрзЗ!\n\nError: ${err.message}` },
       { quoted: msg }
     );
   } finally {
@@ -65,19 +65,19 @@ async function playCommand(sock, msg, query) {
   }
 }
 
-// ── !search command - show results list ──────
+// тФАтФА !search command - show results list тФАтФАтФАтФАтФАтФА
 async function searchCommand(sock, msg, query) {
   if (!query) {
     return sock.sendMessage(
       msg.key.remoteJid,
-      { text: "❌ গানের নাম দাও!\n\nExample: `!search Tumi Amar Mon`" },
+      { text: "тЭМ ржЧрж╛ржирзЗрж░ ржирж╛ржо ржжрж╛ржУ!\n\nExample: `!search Tumi Amar Mon`" },
       { quoted: msg }
     );
   }
 
   await sock.sendMessage(
     msg.key.remoteJid,
-    { text: `🔍 *"${query}"* এর ফলাফল খুঁজছি...` },
+    { text: `ЁЯФН *"${query}"* ржПрж░ ржлрж▓рж╛ржлрж▓ ржЦрзБржБржЬржЫрж┐...` },
     { quoted: msg }
   );
 
@@ -86,20 +86,20 @@ async function searchCommand(sock, msg, query) {
   if (!results || !results.length) {
     return sock.sendMessage(
       msg.key.remoteJid,
-      { text: `❌ *"${query}"* এর কোনো ফলাফল পাওয়া যায়নি!` },
+      { text: `тЭМ *"${query}"* ржПрж░ ржХрзЛржирзЛ ржлрж▓рж╛ржлрж▓ ржкрж╛ржУржпрж╝рж╛ ржпрж╛ржпрж╝ржирж┐!` },
       { quoted: msg }
     );
   }
 
-  let text = `🎵 *"${query}"* এর ফলাফল:\n\n`;
+  let text = `ЁЯО╡ *"${query}"* ржПрж░ ржлрж▓рж╛ржлрж▓:\n\n`;
 
   results.forEach((v, i) => {
     text += `*${i + 1}.* ${v.title}\n`;
-    text += `   ⏱️ ${v.durationStr} | 👀 ${formatNumber(v.views)}\n`;
-    text += `   👤 ${v.author}\n\n`;
+    text += `   тП▒я╕П ${v.durationStr} | ЁЯСА ${formatNumber(v.views)}\n`;
+    text += `   ЁЯСд ${v.author}\n\n`;
   });
 
-  text += `\n💡 ডাউনলোড করতে:\n\`!play ${results[0].title}\``;
+  text += `\nЁЯТб ржбрж╛ржЙржирж▓рзЛржб ржХрж░рждрзЗ:\n\`!play ${results[0].title}\``;
 
   await sock.sendMessage(msg.key.remoteJid, { text }, { quoted: msg });
 }
